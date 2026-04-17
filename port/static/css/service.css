@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body{
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #222222, #000);
+  color: #ffffff;
+  background-color: #222222;
+}
+
+
+.services{
+  min-height: 100vh;              
+  display: flex;
+  flex-direction: column;
+  justify-content: center;        
+  align-items: center;            
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;        
+}
+
+
+.services h1{
+  font-size: 42px;                
+  margin-bottom: 200px;
+  letter-spacing: 1px;
+}
+
+.services-container{
+  width: 100%;
+  max-width: 1100px;         
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;                      
+}
+
+
+.service-card{
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 35px 25px;             
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(183,75,75,0.25);
+}
+
+
+.service-card::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(183,75,75,0.25),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.service-card:hover::before{
+  left: 100%;
+}
+
+
+.service-card:hover{
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 35px 80px rgba(183,75,75,0.6);
+}
+
+
+.service-card h3{
+  font-size: 22px;                
+  margin-bottom: 15px;
+  color: #b74b4b;
+}
+
+
+.service-card p{
+  font-size: 15px;               
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+
+@media (max-width: 600px){
+  .services h2{
+    font-size: 30px;
+  }
+}
+
+
+.back-btn{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #b74b4b;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #b74b4b;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.back-btn:hover{
+  background: #b74b4b;
+  color: #000;
+  box-shadow: 0 0 35px #b74b4b;
+  transform: translateY(-5px);
+}

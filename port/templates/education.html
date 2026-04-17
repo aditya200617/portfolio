@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Education | Aditya Thakur</title>
+  <link rel="stylesheet" href="{% static 'css/education.css' %}">
+</head>
+<body>
+
+<section class="education">
+  <h2>Education</h2>
+
+  <div class="timeline">
+
+    <div class="edu-card">
+      <span class="tag ongoing">Ongoing</span>
+      <h3>Bachelor of Computer Applications (BCA)</h3>
+      <p class="board">Chandigarh University</p>
+      <p class="school">Punjab, India</p>
+      <p class="extra">
+        Currently pursuing BCA with interest in Full Stack & Backend Development.
+      </p>
+    </div>
+
+    <div class="edu-card">
+      <span class="tag year">2024</span>
+      <h3>Senior Secondary (12th – Commerce)</h3>
+      <p class="board">Himachal Pradesh Board of School Education (HPBOSE)</p>
+      <p class="school">Govt. Sr. Sec. School, Makkeri</p>
+
+      <div class="marks">
+        <div>
+          <h4>Total Marks</h4>
+          <p>324 / 500</p>
+        </div>
+        <div>
+          <h4>Stream</h4>
+          <p>Commerce</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <span class="tag year">2022</span>
+      <h3>Matriculation (10th)</h3>
+      <p class="board">Himachal Pradesh Board of School Education (HPBOSE)</p>
+      <p class="school">Govt. High School, Kolang</p>
+
+      <div class="marks">
+        <div>
+          <h4>Total Marks</h4>
+          <p>537 / 700</p>
+        </div>
+        <div>
+          <h4>Status</h4>
+          <p>Passed</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← Back</button>
+
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+
+</section>
+
+</body>
+</html>

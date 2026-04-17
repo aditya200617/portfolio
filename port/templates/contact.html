@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="contact.css"> -->
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}"> 
+</head>
+<body>
+  
+  <section class="contact">
+    <h1 style="text-align: center;"><b>Contact me</b></h1><br><br>
+
+    <div class="contact-container">
+      
+      
+      <div class="contact-info"><br><br><br>
+        <p>adityathakur8112006@gmail.com</p><br>
+        <p>(+91) 90150 12040</p><br>
+        <p>House No.2285 Sector 35C <br>Chandigarh , India </p><br>
+      </div>
+
+      {% csrf_token %}
+
+      
+      <form class="contact-form" method="post">
+        {% csrf_token %}
+        <label >Name</label>
+        <div class="name-fields">
+          <input type="text" placeholder="First Name" required name="fname">
+          <input type="text" placeholder="Last Name" required name="lname">
+        </div>
+
+        <label for="email">Email </label>
+        <input type="email" required name="email">
+
+        <label for="message">Message</label>
+        <textarea rows="4" required name="message"></textarea>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+
+    </div>
+
+
+    <button class="back-btn" onclick="goback()"> Back</button>
+
+    <script>
+      function goback(){
+        window.history.back();
+        
+      }
+    </script>
+
+
+
+
+  </section>
+
+
+
+</body>
+</html>

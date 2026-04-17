@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Services</title>
+    <!-- <link rel="stylesheet"  href="{% static 'css/service.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/service.css' %}">  
+</head>
+ <body>
+
+
+<section class="services">
+  <h1>My Services</h1>
+
+  <div class="services-container">
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Responsive and user-friendly websites using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Python Programming</h3>
+      <p>Basic Python scripts, automation, and logical problem solving.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Student Projects</h3>
+      <p>Mini projects and academic support for BCA and beginners.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Learning & Growth</h3>
+      <p>Continuously learning new technologies and applying them in projects.</p>
+    </div>
+  </div>
+
+  <button class="back-btn" onclick="goBack()">← Back</button>
+
+  <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</section>
+
+
+
+</body>
+</html>

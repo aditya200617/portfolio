@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ===== RESET ===== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: radial-gradient(circle at top, #111, #000);
+  color: #fff;
+  overflow-x: hidden;
+  /* Prevent scrolling if content is small */
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; 
+  z-index: 1000;
+}
+
+#menu-icon{
+  font-size: 3.6rem;
+  color: #b74b4b;
+  cursor: pointer;
+  display: none;
+}
+
+/* Logo */
+.logo{
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #b74b4b;
+  transition: 0.4s;
+}
+
+.logo:hover{
+  transform: scale(1.08);
+}
+
+/* Nav */
+nav a{
+  font-size: 1.7rem;
+  margin-left: 3.5rem;
+  color: #ddd;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #b74b4b;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after{
+  width: 100%;
+}
+
+nav a:hover,
+nav a.active{
+  color: #b74b4b;
+}
+
+/* ===== SECTION COMMON (Changes to fix extra space) ===== */
+section{
+  padding: 12rem 9% 4rem; /* Top padding is large to clear fixed header */
+}
+
+/* ===== HOME (Changed min-height to auto) ===== */
+.home{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 6rem;
+  min-height: auto; /* Changed from 100vh to remove extra space */
+}
+
+.home{
+    margin-bottom: 275px;
+}
+
+/* Text */
+.home-content h1{
+  font-size: 6.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.home-content h3{
+  font-size: 3.6rem;
+  margin: 1rem 0;
+}
+
+.home-content p{
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+span{
+  color: #b74b4b;
+}
+
+/* Typing Animation */
+.typing-text{
+  font-weight: 600;
+}
+
+.typing-text span::before{
+  content: "Web Developer";
+  animation: words 18s infinite;
+}
+
+.typing-text span::after{
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #b74b4b;
+  right: -6px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink{
+  50%{opacity: 0;}
+}
+
+@keyframes words{
+  0%,25%{content:"Web Developer";}
+  26%,50%{content:"UI Designer";}
+  51%,75%{content:"Full Stack Developer";}
+  76%,100%{content:"Python Developer";}
+}
+
+/* ===== IMAGE ===== */
+.home-img{
+  display: flex;
+  justify-content: center;
+}
+
+.home-img img{
+  width: 380px; /* Adjusted size based on your screenshot */
+  border-radius: 50%;
+  border: 4px solid #b74b4b;
+  box-shadow: 0 0 40px rgba(183,75,75,0.4);
+  transition: 0.4s;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons{
+  margin: 2.5rem 0;
+}
+
+.social-icons a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  border: 2px solid #b74b4b;
+  margin-right: 1.5rem;
+  font-size: 2rem;
+  color: #b74b4b;
+  transition: 0.3s;
+}
+
+.social-icons a:hover{
+  background: #b74b4b;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  display: inline-block;
+  padding: 1.2rem 3.2rem;
+  border-radius: 4rem;
+  border: 2px solid #b74b4b;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #b74b4b;
+  transition: 0.3s;
+}
+
+.btn:hover{
+  background: #b74b4b;
+  color: #000;
+  box-shadow: 0 0 25px #b74b4b;
+}
+
+
+
+/* ===========================================
+   ===== MEDIA QUERIES (MOBILE RESPONSIVE) ===
+   =========================================== */
+
+@media (max-width: 900px) {
+    /* 1. Show Menu Button */
+    #menu-icon {
+        display: block;
+    }
+
+    /* 2. Transparent Glassmorphism Dropdown */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 2rem 4%;
+        background: rgba(0, 0, 0, 0.4); /* Subtle dark tint for readability */
+        backdrop-filter: blur(15px); 
+        -webkit-backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(183, 75, 75, 0.3); 
+        
+        /* Smooth Slide-down UI */
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: -1; 
+    }
+
+    /* 3. Active state triggered by JavaScript */
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        z-index: 99;
+    }
+
+    /* 4. Centered Links */
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 2.5rem 0;
+        text-align: center;
+        color: #fff;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #b74b4b;
+    }
+
+    /* 5. Mobile Layout Fixes */
+    .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+        /* margin-bottom: 50px;  */
+        gap: 3rem;
+    }
+
+    /* Puts the image above the text on mobile */
+    .home-img {
+        order: -1; 
+    }
+
+    .home-img img {
+        width: 250px;
+        margin-top: 2rem;
+    }
+
+    .home-content h1 { font-size: 4.5rem; }
+    .home-content h3 { font-size: 2.5rem; }
+    .home-content p { margin: 0 auto; }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media (max-width: 450px) {
+    html { font-size: 55%; }
+    .home-img img { width: 200px; }
+    .home-content h1 { font-size: 3.5rem; }
+}

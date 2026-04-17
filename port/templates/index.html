@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <title>Portfolio website</title>
+ </head>
+ <body>
+    <header>
+        <a href="#" class="logo">Aditya</a>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+        <nav id="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="{% url 'service' %}">Services</a>
+            <a href="{% url 'skills' %}">Skills</a>
+            <a href="{% url 'education' %}">Education</a>
+            <a href="{% url 'contact' %}">Contact Me</a>
+        </nav>
+    </header>
+    
+    <section class="home">
+        <div class="home-img">
+            <img src="{% static 'images/myphoto.png' %}" alt="Aditya">
+        </div>
+        <div class="home-content">
+            <h1>Hi It's <span>Aditya Thakur</span></h1>
+            <h3 class="typing-text">I'm a <span></span> </h3>
+            <p>I am a motivated and detail-oriented student with a strong interest in programming and web development. I enjoy learning new technologies and applying my knowledge to build practical, user-focused projects. My current focus is on strengthening my skills in Python and full-stack development while continuously improving my problem-solving abilities. I believe in consistent learning, writing clean code, and growing through hands-on experience. My goal is to create meaningful digital solutions and develop as a skilled and reliable software developer.</p>
+            <div class="social-icons">
+                <a href="#"><i class ="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/aditya200617"><i class ="fa-brands fa-github"></i></a>
+                <a href="#"><i class ="fa-brands fa-x-twitter"></i></a>
+                <!-- <a href="https://www.instagram.com/thakur__aditya__315/"><i class ="fa-brands fa-instagram"></i></a> -->
+            </div>
+
+            <a href="{% url 'contact' %}" class="btn">Hire me</a>
+        </div>
+    </section>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('#navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        }
+    </script>
+    
+ </body>
+ </html>
