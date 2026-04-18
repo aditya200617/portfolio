@@ -22,7 +22,7 @@ def resume_view(request):
 def contact_view(request):
     return render(request, 'contact.html')
 
-# Sahi tarika:
+
 def contact_view(request):
     if request.method == 'POST':
         print("------------post5 ----------")
@@ -36,8 +36,7 @@ def contact_view(request):
         new_entry = Port(fname=fname, lname = lname, email=email, message=message)
         new_entry.save()
         
-        # print("Data saved successfully!")
-        # return render(request, 'contact.html', {'success': True})
+
 
     return render(request, 'contact.html')
     

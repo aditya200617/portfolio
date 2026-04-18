@@ -19,7 +19,6 @@ body{
   background: radial-gradient(circle at top, #111, #000);
   color: #fff;
   overflow-x: hidden;
-  /* Prevent scrolling if content is small */
   min-height: 100vh;
 }
 
@@ -88,7 +87,7 @@ nav a.active{
 
 /* ===== SECTION COMMON (Changes to fix extra space) ===== */
 section{
-  padding: 12rem 9% 4rem; /* Top padding is large to clear fixed header */
+  padding: 12rem 9% 4rem; 
 }
 
 /* ===== HOME (Changed min-height to auto) ===== */
@@ -97,7 +96,7 @@ section{
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 6rem;
-  min-height: auto; /* Changed from 100vh to remove extra space */
+  min-height: auto; 
 }
 
 .home{
@@ -165,7 +164,7 @@ span{
 }
 
 .home-img img{
-  width: 380px; /* Adjusted size based on your screenshot */
+  width: 380px; 
   border-radius: 50%;
   border: 4px solid #b74b4b;
   box-shadow: 0 0 40px rgba(183,75,75,0.4);
@@ -227,14 +226,13 @@ span{
         display: block;
     }
 
-    /* 2. Transparent Glassmorphism Dropdown */
     nav {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         padding: 2rem 4%;
-        background: rgba(0, 0, 0, 0.4); /* Subtle dark tint for readability */
+        background: rgba(0, 0, 0, 0.4); 
         backdrop-filter: blur(15px); 
         -webkit-backdrop-filter: blur(15px);
         border-top: 1px solid rgba(183, 75, 75, 0.3); 
@@ -247,7 +245,7 @@ span{
         z-index: -1; 
     }
 
-    /* 3. Active state triggered by JavaScript */
+
     nav.active {
         transform: translateY(0);
         opacity: 1;
@@ -255,7 +253,7 @@ span{
         z-index: 99;
     }
 
-    /* 4. Centered Links */
+
     nav a {
         display: block;
         font-size: 2rem;
@@ -269,7 +267,7 @@ span{
         color: #b74b4b;
     }
 
-    /* 5. Mobile Layout Fixes */
+
     .home {
         grid-template-columns: 1fr;
         text-align: center;
@@ -277,7 +275,6 @@ span{
         gap: 3rem;
     }
 
-    /* Puts the image above the text on mobile */
     .home-img {
         order: -1; 
     }
