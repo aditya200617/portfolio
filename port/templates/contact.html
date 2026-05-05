@@ -5,11 +5,196 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/contact.css' %}"> 
 </head>
 <body>
+
+  <style>*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #111;
+  color: #fff;
+}
+
+
+.contact h1{
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  padding-left: 150px;
+  padding-right: 100px;
+}
+
+
+.contact-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  padding-left: 150px;
+  padding-right: 100px;
+}
+
+
+.contact-info{
+  font-size: 14px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+
+.contact-form{
+  width: 100%;
+  max-width: 450px;
+}
+
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  color: #fff;
+  outline: none;
+}
+
+.name-fields{
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form button{
+  background: rgba(0,0,0,0.5);
+  color:#b74b4b;
+  border: 2px solid #b74b4b;
+  padding: 10px 30px;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.4s;
+  border-radius: 40px;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+
+
+
+@media (max-width: 900px){
+  .contact-container{
+    flex-direction: column;
+  }
+
+  .contact h1{
+    font-size: 50px;
+  }
+
+  .contact{
+    padding: 60px 30px;
+  }
+}
+
+
+.back-btn{
+  position: fixed;
+  top:20px;
+  left: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #b74b4b;
+  background-color: rgba(0,0,0,0.5);
+  border: 2px solid #b74b4b;
+  border-radius: 40px;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: 0.4s;
+  overflow: hidden;
+
+}
+
+
+.back-btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(183,75,75,0.4)
+    transparent
+
+  );
+  transform: translateX(-100%);
+  transition:0.5s;
+}
+
+
+
+.back-btn:hover::before{
+  transform: translateX(-100%);
+}
+
+
+.back-btn:hover{
+  background-color: #b74b4b;
+  color: #000;
+  box-shadow: 0 0 35px #b74b4b;
+}
+
+
+.contact-form button::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(183,75,75,0.4)
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.contact-form button:hover::before{
+  transform: translateX(-100%);
+}
+
+.contact-form button:hover{
+  background-color: #b74b4b;
+  color: #000;
+  box-shadow: 0 0 35px #b74b4b;
+}
+
+@media (max-width: 900px){
+  .contact-container{
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+  }
+
+  .contact h1{
+    font-size: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+
+  .contact{
+    padding: 20px 0;
+  }
+}</style>
   
   <section class="contact">
     <h1 style="text-align: center;"><b>Contact me</b></h1><br><br>
